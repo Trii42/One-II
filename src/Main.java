@@ -4,7 +4,6 @@ import java.util.Map;
 
 public class Main {
 
-	
     public static void main(String[] args) {
     	
     //Init Entrant
@@ -23,7 +22,7 @@ public class Main {
     }
     
     public static void deplacerVoitures(Entrant ent) {
-    	Map<Voiture, ArrayList<Trajet>> res = new HashMap();
+    	Map<Integer, ArrayList<Trajet>> res = new HashMap();
     	for(int i = 0; i<= ent.voitures.size();i++) {
     		Trajet cible = res.get(i).get(res.get(i).size() - 1); // trajet en cours
     		ent.voitures.get(i).setCoordonnee(
@@ -32,9 +31,15 @@ public class Main {
     	
     }
     
-   private static void assignerTrajetVoiture(Entrant ent, Map map) {
-    	
+   private static void assignerTrajetVoiture(Entrant ent, Map<Integer, ArrayList<Trajet>> map) {
+
     }
+   
+   private static boolean checkIfVoitureIsFree(Voiture v, Trajet t) {
+	   return v.coordonnee.equals(t.coordArrive);
+   }
+   
+
     
     private static Coordonnee deplacementVers(Coordonnee voiture, Coordonnee destination) {
     	if (voiture.getX() < destination.getX()){
