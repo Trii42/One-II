@@ -1,32 +1,41 @@
-import java.io.IOException;
-import java.nio.file.FileSystems;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Main {
 
-    public static void main(final String[] args) throws IOException {
+    public static void main(final String[] args) {
 
-        System.out.println(FileSystems.getDefault().getPath("source", "a_example.in"));
         // Init Entrant
         final Entrant ent = new Entrant();
-        ent.init("a_example.in");
-        new HashMap();
+        // Init Sortie
+        final Map<Voiture, ArrayList<Trajet>> res = new HashMap();
+        for (int i = 0; i <= 10; i++/* ent.NbStep */) {
+            // Assignation trajet aux voitures
+            assignerTrajetVoiture(ent, res);
+            // maj des positions des voitures
+            deplacerVoitures(ent);
+
+        }
+        // generer le fichier de sortie
 
     }
 
-    public void DeplacerVoiture(final Entrant ent) {
+    public static void deplacerVoitures(final Entrant ent) {
         final Map<Voiture, ArrayList<Trajet>> res = new HashMap();
         for (int i = 0; i <= ent.voitures.size(); i++) {
             final Trajet cible = res.get(i).get(res.get(i).size() - 1); // trajet en cours
             ent.voitures.get(i).setCoordonnee(
-                    this.deplacementVers(ent.voitures.get(i).getCoordonnee(), cible.getCoordArrive()));
+                    deplacementVers(ent.voitures.get(i).getCoordonnee(), cible.getCoordArrive()));
         }
 
     }
 
-    private Coordonnee deplacementVers(final Coordonnee voiture, final Coordonnee destination) {
+    private static void assignerTrajetVoiture(final Entrant ent, final Map map) {
+
+    }
+
+    private static Coordonnee deplacementVers(final Coordonnee voiture, final Coordonnee destination) {
         if (voiture.getX() < destination.getX()) {
             return new Coordonnee(voiture.getX() + 1, voiture.getY());
         }
