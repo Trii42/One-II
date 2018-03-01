@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Main {
@@ -19,6 +20,17 @@ public class Main {
         }
         // generer le fichier de sortie
 
+    }
+    
+    public static void assignerTrajet(ArrayList<Trajet> trajets,ArrayList<Voiture> voitures) {
+    	List<Trajet> minTrajet;
+    	for(int i=0; i < trajets.size(); i++) {
+    		if(trajets.get(i).tempsDepart <= i) {
+    			for(int j=0; j < voitures.size(); j++) {
+    			
+    			}
+    		}
+    	}
     }
 
     public static void deplacerVoitures(final Entrant ent) {
