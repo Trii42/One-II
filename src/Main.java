@@ -9,9 +9,14 @@ public class Main {
 	
 	
     public static void main(String[] args) {
-        
- 
     	
+    //Init Entrant
+    Entrant ent	= new Entrant();
+    /*for(int i = 0; i++; i<= ent.NbStep) {
+    	//faire des choses
+    	
+    }*/
+        
 
     }
     
@@ -28,16 +33,16 @@ public class Main {
     
     private Coordonnee deplacementVers(Coordonnee voiture, Coordonnee destination) {
     	if (voiture.getX() < destination.getX()){
-    		return new Coordonnee(voiture.getX()+1,voiture.getY())
+    		return new Coordonnee(voiture.getX()+1,voiture.getY());
     	}
     	if (voiture.getX() > destination.getX()){
-    		return new Coordonnee(voiture.getX()+1,voiture.getY())
+    		return new Coordonnee(voiture.getX()+1,voiture.getY());
     	}
     	if (voiture.getY() < destination.getY()){
-    		return new Coordonnee(voiture.getX()+1,voiture.getY())
+    		return new Coordonnee(voiture.getX()+1,voiture.getY());
     	}
     	if (voiture.getY() > destination.getY()){
-    		return new Coordonnee(voiture.getX()+1,voiture.getY())
+    		return new Coordonnee(voiture.getX()+1,voiture.getY());
     	}
 		return destination;
     }
