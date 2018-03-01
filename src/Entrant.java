@@ -1,7 +1,7 @@
 import java.io.IOException;
-import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.FileSystems;
 import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,11 +16,14 @@ public class Entrant {
     }
 
     public void init(final String nomFichier) throws IOException {
-        final List<String> lines = Files.readAllLines(Paths.get(nomFichier), Charset.forName("UTF-8"));
+        final List<String> lines = Files.readAllLines(FileSystems.getDefault().getPath("source", nomFichier), StandardCharsets.UTF_8);
         final String initLigne = lines.get(0);
         final String[] premiereLigne = initLigne.split(" ");
-        carte.largeur = Integer.parseInt(premiereLigne[0]);
-        carte.longueur = Integer.parseInt(premiereLigne[1]);
+        carte = new Carte(Integer.parseInt(premiereLigne[0]), Integer.parseInt(premiereLigne[1]));
+        voitures = new ArrayList<>();
+        trajets = new ArrayList<>();
+        // carte.largeur = Integer.parseInt(premiereLigne[0]);
+        // carte.longueur = Integer.parseInt(premiereLigne[1]);
         tempsMax = Integer.parseInt(premiereLigne[5]);
 
         final int nbVoitures = Integer.parseInt(premiereLigne[2]);
