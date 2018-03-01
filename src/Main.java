@@ -10,20 +10,27 @@ public class Main {
         // Init Entrant
         final Entrant ent = new Entrant();
         // Init Sortie
-        final Map<Voiture, ArrayList<Trajet>> res = new HashMap();
-        for (int i = 0; i <= 10; i++/* ent.NbStep */) {
-            // Assignation trajet aux voitures
-            assignerTrajetVoiture(ent, res);
-            // maj des positions des voitures
-            deplacerVoitures(ent);
+        final Map<Integer, ArrayList<Trajet>> res = new HashMap();
+        
+        for (Trajet t : ent.trajets) {
+        		res.get(0).add(t);
+        }
+        
 
         }
         // generer le fichier de sortie
 
     }
     
-    public static void assignerTrajet(ArrayList<Trajet> trajets,ArrayList<Voiture> voitures) {
-    	List<Trajet> minTrajet;
+    /*public static void assignerTrajet(Entrant ent, Map<Voiture, ArrayList<Trajet>> map ) {
+    	
+    	for(Voiture v : ent.voitures) {
+    		map.get(v).add(ent.)
+    	}
+    	
+    	
+    	
+    	/*List<Trajet> minTrajet;
     	for(int i=0; i < trajets.size(); i++) {
     		if(trajets.get(i).tempsDepart <= i) {
     			for(int j=0; j < voitures.size(); j++) {
@@ -31,9 +38,9 @@ public class Main {
     			}
     		}
     	}
-    }
+    }*/
 
-    public static void deplacerVoitures(final Entrant ent) {
+   /* public static void deplacerVoitures(final Entrant ent) {
         final Map<Integer, ArrayList<Trajet>> res = new HashMap();
         for (int i = 0; i <= ent.voitures.size(); i++) {
             final Trajet cible = res.get(i).get(res.get(i).size() - 1); // trajet en cours
@@ -41,13 +48,10 @@ public class Main {
                     deplacementVers(ent.voitures.get(i).getCoordonnee(), cible.getCoordArrive()));
         }
 
-    }
+    }*/
 
-    private static void assignerTrajetVoiture(final Entrant ent, final Map<Voiture, ArrayList<Trajet>> map) {
 
-    }
-
-    private static boolean checkIfVoitureIsFree(final Voiture v, final Trajet t) {
+   /* private static boolean checkIfVoitureIsFree(final Voiture v, final Trajet t) {
         return v.coordonnee.equals(t.coordArrive);
     }
 
@@ -65,4 +69,4 @@ public class Main {
         }
     }
 
-}
+}*/
