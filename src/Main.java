@@ -5,35 +5,38 @@ import java.util.Map;
 public class Main {
 
 	
-	
-	
-	
     public static void main(String[] args) {
     	
     //Init Entrant
     Entrant ent	= new Entrant();
     //Init Sortie
     Map<Voiture, ArrayList<Trajet>> res = new HashMap();
-    /*for(int i = 0; i++; i<= ent.NbStep) {
-    	//faire des choses
+    for(int i = 0; i <= 10; i++/*ent.NbStep*/) {
+    	//Assignation trajet aux voitures
+    	assignerTrajetVoiture(ent, res);
+    	// maj des positions des voitures
+    	deplacerVoitures(ent);
     	
-    }*/
+    }
+    // generer le fichier de sortie
         
-
     }
     
-    
-    public void DeplacerVoiture(Entrant ent) {
+    public static void deplacerVoitures(Entrant ent) {
     	Map<Voiture, ArrayList<Trajet>> res = new HashMap();
     	for(int i = 0; i<= ent.voitures.size();i++) {
     		Trajet cible = res.get(i).get(res.get(i).size() - 1); // trajet en cours
     		ent.voitures.get(i).setCoordonnee(
-    				this.deplacementVers(ent.voitures.get(i).getCoordonnee(), cible.getCoordArrive()));
+    				deplacementVers(ent.voitures.get(i).getCoordonnee(), cible.getCoordArrive()));
     	}
     	
     }
     
-    private Coordonnee deplacementVers(Coordonnee voiture, Coordonnee destination) {
+   private static void assignerTrajetVoiture(Entrant ent, Map map) {
+    	
+    }
+    
+    private static Coordonnee deplacementVers(Coordonnee voiture, Coordonnee destination) {
     	if (voiture.getX() < destination.getX()){
     		return new Coordonnee(voiture.getX()+1,voiture.getY());
     	}
@@ -49,5 +52,7 @@ public class Main {
 		return destination;
     }
 
+ 
+    
 }
  
