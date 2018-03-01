@@ -23,9 +23,9 @@ public class Sortant {
             final Integer cle = (Integer) it.next(); // tu peux typer plus finement ici
             final ArrayList<Trajet> valeur = res.get(cle); // tu peux typer plus finement ici
 
-            b = b + cle;
+            b = b + (cle + 1);
             for (final Trajet trajet : valeur) {
-                b = b + " " + trajet.id;
+                b = b + " " + (trajet.id - 1);
             }
             b = b + "\n";
 
