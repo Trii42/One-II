@@ -16,6 +16,11 @@ public class Trajet {
         this.id = id;
     }
 
+    public Trajet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
     public Coordonnee getCoordDepart() {
         return coordDepart;
     }
