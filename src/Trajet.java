@@ -5,13 +5,15 @@ public class Trajet {
     public Coordonnee coordArrive;
     public int tempsDepart;
     public int tempsArrive;
+    public int id;
 
-    public Trajet(final Coordonnee coordDepart, final Coordonnee coordArrive, final int tempsDepart, final int tempsArrive) {
+    public Trajet(final Coordonnee coordDepart, final Coordonnee coordArrive, final int tempsDepart, final int tempsArrive, final int id) {
         super();
         this.coordDepart = coordDepart;
         this.coordArrive = coordArrive;
         this.tempsDepart = tempsDepart;
         this.tempsArrive = tempsArrive;
+        this.id = id;
     }
 
     public Coordonnee getCoordDepart() {
