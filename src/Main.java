@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class Main {
@@ -11,9 +10,13 @@ public class Main {
         final Entrant ent = new Entrant();
         // Init Sortie
         final Map<Integer, ArrayList<Trajet>> res = new HashMap();
-        
+        int i =0;
         for (Trajet t : ent.trajets) {
-        		res.get(0).add(t);
+        		res.get(i).add(t);
+        		i++;
+        		if (i==ent.voitures.size()){
+        			i = 0;
+        		}
         }
         
 
