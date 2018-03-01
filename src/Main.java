@@ -12,6 +12,8 @@ public class Main {
     	
     //Init Entrant
     Entrant ent	= new Entrant();
+    //Init Sortie
+    Map<Voiture, ArrayList<Trajet>> res = new HashMap();
     /*for(int i = 0; i++; i<= ent.NbStep) {
     	//faire des choses
     	
@@ -22,7 +24,7 @@ public class Main {
     
     
     public void DeplacerVoiture(Entrant ent) {
-    	Map<Integer, ArrayList<Trajet>> res = new HashMap();
+    	Map<Voiture, ArrayList<Trajet>> res = new HashMap();
     	for(int i = 0; i<= ent.voitures.size();i++) {
     		Trajet cible = res.get(i).get(res.get(i).size() - 1); // trajet en cours
     		ent.voitures.get(i).setCoordonnee(
