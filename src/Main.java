@@ -4,6 +4,7 @@ import java.util.Map;
 
 public class Main {
 
+
     public static void main(String[] args) {
     	
     //Init Entrant
@@ -31,7 +32,7 @@ public class Main {
     	
     }
     
-   private static void assignerTrajetVoiture(Entrant ent, Map<Integer, ArrayList<Trajet>> map) {
+   private static void assignerTrajetVoiture(Entrant ent, Map<Voiture, ArrayList<Trajet>> map) {
 
     }
    
@@ -53,11 +54,7 @@ public class Main {
     	}
     	if (voiture.getY() > destination.getY()){
     		return new Coordonnee(voiture.getX()+1,voiture.getY());
-    	}
-		return destination;
+    	}	
     }
 
- 
-    
 }
- 
