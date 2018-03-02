@@ -9,24 +9,32 @@ public class Main {
 
         // Init Entrant
         final Entrant ent = new Entrant();
-        ent.init("e_high_bonus.in");
-        // Init Sortie
-        final Map<Integer, ArrayList<Trajet>> res = new HashMap();
-        for (int i = 0; i < ent.voitures.size(); ++i) {
-            res.put(i, new ArrayList<>());
-        }
-        int i = 0;
-        for (final Trajet t : ent.trajets) {
-            res.get(i).add(t);
-            i++;
-            if (i == ent.voitures.size()) {
-                i = 0;
+        final ArrayList<String> entrant = new ArrayList<>();
+        entrant.add("a_example.in");
+        entrant.add("b_should_be_easy.in");
+        entrant.add("c_no_hurry.in");
+        entrant.add("d_metropolis.in");
+        entrant.add("e_high_bonus.in");
+        for (int y = 1; y <= 5; ++y) {
+            ent.init(entrant.get(y - 1));
+            // Init Sortie
+            final Map<Integer, ArrayList<Trajet>> res = new HashMap();
+            for (int i = 0; i < ent.voitures.size(); ++i) {
+                res.put(i, new ArrayList<>());
             }
-        }
+            int i = 0;
+            for (final Trajet t : ent.trajets) {
+                res.get(i).add(t);
+                i++;
+                if (i == ent.voitures.size()) {
+                    i = 0;
+                }
+            }
 
-        // generer le fichier de sortie
-        final Sortant s = new Sortant(res);
-        s.genereFichier("res5.txt");
+            // generer le fichier de sortie
+            final Sortant s = new Sortant(res);
+            s.genereFichier("res" + y + ".txt");
+        }
     }
 
 }
